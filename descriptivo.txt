@@ -1,0 +1,86 @@
+Concepto amplio de red.
+
+RED Telofonia Movil GSM Global System for Mobile communications
+https://es.wikipedia.org/wiki/Sistema_global_para_las_comunicaciones_m%C3%B3viles
+
+RED Cableoperadores.
+Broadcast: esto es, un centro emite, muchos receptores.
+
+Tipos de conmutacion en las redes.
+
+Conmutacion por circuitos: un circuito ocupa todo el espectro.
+Las centrales telefonicas conmutan por circuito.
+
+En las troncales telefonicas, se utiliza conmutación por timeslot.
+https://es.qwe.wiki/wiki/Time-slot_interchange
+
+Se divide por n circuitos, y cada circuito ocupa un pequeño lapso 
+de tiempo.
+
+Todo esto, se ve intermezclado por la conmutacion por paquete.
+
+Ventaja de conmutar por paquete.
+
+Sincrónico vs Asincrónico.
+
+pueden venir paquetes de diferentes locaciones, y puedo recibirlos
+de manera concurrente.
+
+El costo es menor, porque la red de internet se utiliza para cualquier
+tipo de aplicacion.
+
+Las plataformas de streaming van a ver que se les dice broadcast.
+Hay que pensar que cada cliente, esta viendo una porcion diferente de el asset
+la pelicula o la serie.
+
+Conmutacion por paquetes.
+
+Ahi entramos a la red ip. que es una de las de las redes de conmutación por paquetes.
+
+Características de la red ip.
+  Nodos ip, estos nodos forman un enorme circuito.
+  de A a B podes llegar a través de varios caminos.
+
+  ROUTERS distribuidos.
+
+Problemas:
+
+  Los paquetes llegan desordenados.
+
+  En el stack de protocolos hay un protocolo que se llama TCP
+  Transport Control Protocol
+
+  RTP Real time protocol
+  https://es.wikipedia.org/wiki/Protocolo_de_transporte_en_tiempo_real
+
+Keywords
+
+  IP direccion ip.
+  port es un numero dentro de una direccion ip, donde trabaja una aplicación.
+
+  Normalmente al ser 2 bytes va de 1 a 65353
+
+  Usualmente estan reservados hasta 4 digitos, y luego van nuestros ports.
+  https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+
+Practica en java
+
+  Un cliente TCP se conecta con un servidor TCP ambos tiene un objeto
+  Socket.
+
+  Ambos sockets, tienen un inputStream y ouotputStream
+                             lectura       escribir
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
