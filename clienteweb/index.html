@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Starter Template · Bootstrap</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <script src="js/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.js"></script>
+        
+        <input type="button" id="btnIncrementar" value="INCREMENTAR" />
+        <label id="numerador">0</label>
+
+        <script>
+            $(document).on('click', '#btnIncrementar', function(e) {
+                setTimeout(function() {
+                    var script = document.createElement('script');
+                    script.src = 'http://localhost:12000';
+                    document.head.appendChild(script);
+                },1);
+            });
+        </script>
+
+    </body>
+</html>

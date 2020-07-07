@@ -11,42 +11,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Init {
+    public Integer numerador = 1;
+    
+    static ProcesaMensajeJavascript[] actoresProcesaMensaje  = new ProcesaMensajeJavascript[10];
+    static int idx = 0;
+    
     private static void aceptarConexiones(ServerSocket serverSocket) {
         try {
             Socket socket = serverSocket.accept();
-            // derivar a un actor y que ese actor se encargue
-            // NO SE PUEDE HACER NADA SINCRONICO !!!!
-            InputStreamReader isr = new InputStreamReader(socket.getInputStream());
-            PrintWriter out = new PrintWriter(socket.getOutputStream());
-            BufferedReader br = new BufferedReader(isr);
-            
-            for (boolean corte = false; !corte;) {
-                String linea = br.readLine();
-                if (linea.getBytes().length == 0) {
-                    corte = true;
-                    continue;
-                }
-                System.out.println(linea);
-            }
-            
-            System.out.println("Haciendo tarea pesada");
-            try { Thread.sleep(10000); } catch (Exception ex) {}
-            System.out.println("Fin haciendo tarea pesada");
-            
-            String mensaje = "Gracias por conectarse";
-            
-            
-            out.println("HTTP/1.1 200 OK");
-            out.println("Content-Type: application/javascript; charset=utf-8");
-            out.println("Server: Servidorsito nuestro");
-            out.println("Content-Length: " + mensaje.length());
-            out.println("");
-            out.println(mensaje);
-            out.flush();
-            
-            isr.close();
-            out.close();
-            socket.close();
+            actoresProcesaMensaje[idx].encolarMensaje(socket);
+            idx = (idx == 9) ? 0 : idx+1;
+            System.out.println("Encolando en thread: " + idx);
         }
         catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -64,6 +39,9 @@ public class Init {
         }
     }
     public static void main(String[] args) {
+        for (int x = 0; x < 10; x++) {
+            actoresProcesaMensaje[x] = new ProcesaMensajeJavascript();
+        }
         crearServerSocket();
     }
 }
