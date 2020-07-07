@@ -72,7 +72,15 @@ Practica en java
                              lectura       escribir
 
   
+----------------------------------------------------------------
+Que queremos hacer.
+----------------------------------------------------------------
 
+Un actor que reciba un Socket y realize una tarea pesada.
+Luego que conteste con un javascript que se va a ejecutar desde un browser
+
+ese javascript va a realizar diferentes operaciones y se va a volver
+a conectar al servidor.
 
 
   
